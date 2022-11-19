@@ -1,4 +1,4 @@
-﻿namespace LinkedList.Model;
+﻿namespace Shared.Models;
 
 /// <summary>
 /// Item

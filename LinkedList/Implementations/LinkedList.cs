@@ -1,12 +1,14 @@
 ﻿using System.Collections;
+using LinkedList.Interfaces;
+using Shared.Models;
 
-namespace LinkedList.Model;
+namespace LinkedList.Implementations;
 
 /// <summary>
 /// Single linked list
 /// </summary>
 /// <typeparam name="T"></typeparam>
-public class LinkedList<T> : IEnumerable<T>
+public class LinkedList<T> : ILinkedList<T>
 {
     /// <summary>
     /// First element of list
@@ -26,11 +28,55 @@ public class LinkedList<T> : IEnumerable<T>
     /// </summary>
     public LinkedList()
     {
+        Clear();
+    }
+    
+    /// <summary>
+    /// Remove all elements
+    /// </summary>
+    public void Clear()
+    {
         Head = null;
         Tail = null;
         Count = 0;
     }
-    
+
+    /// <summary>
+    /// Add data to beginning list 
+    /// </summary>
+    /// <param name="data"></param>
+    public void AddFirst(T data)
+    {
+        var item = new Item<T> (data){ Next = Head };
+        Head = item;
+        Count--;
+    }
+
+    public void InsertAfter(T target, T data)
+    {
+        if (Head != null)
+        {
+            var current = Head;
+            while (current != null)
+            {
+                if (current.Value.Equals(target))
+                {
+                    var item = new Item<T>(data);
+                    item.Next = current.Next;
+                    current.Next = item;
+                    Count++;
+                    return;
+                }
+                else
+                {
+                    current = current.Next;
+                }
+            }
+           
+            
+        }
+    }
+
     /// <summary>
     /// Create list with first element
     /// </summary>
