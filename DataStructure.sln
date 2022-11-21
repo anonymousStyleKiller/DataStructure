@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stack", "Stack\Stack.csproj", "{30DE1C3F-B132-4FFA-95A0-37E9AEA4B7FC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoubleLinkedList", "DoubleLinkedList\DoubleLinkedList.csproj", "{EF779E10-C946-4A84-B7C7-3BBB1C182EAB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{30DE1C3F-B132-4FFA-95A0-37E9AEA4B7FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{30DE1C3F-B132-4FFA-95A0-37E9AEA4B7FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{30DE1C3F-B132-4FFA-95A0-37E9AEA4B7FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF779E10-C946-4A84-B7C7-3BBB1C182EAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF779E10-C946-4A84-B7C7-3BBB1C182EAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF779E10-C946-4A84-B7C7-3BBB1C182EAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF779E10-C946-4A84-B7C7-3BBB1C182EAB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
