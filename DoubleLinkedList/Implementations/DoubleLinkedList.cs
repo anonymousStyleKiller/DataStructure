@@ -26,6 +26,14 @@ public class DoubleLinkedList<T> : IDoubleLinkedList<T>
     public void Add(T data)
     {
         var item = new DoubleItem<T>(data);
+        if (Count == 0)
+        {
+            Head = item;
+            Tail = item;
+            Count = 1;
+            return; 
+        }
+        
         Tail.Next = item;
         item.Prev = Tail;
         Tail = item;
@@ -73,8 +81,6 @@ public class DoubleLinkedList<T> : IDoubleLinkedList<T>
         }
     }
     
-    
-
     IEnumerator IEnumerable.GetEnumerator()
     {
         return GetEnumerator();

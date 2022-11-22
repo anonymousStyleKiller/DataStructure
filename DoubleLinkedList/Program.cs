@@ -22,3 +22,11 @@ foreach (var item in doubleList)
 {
     Console.WriteLine(item);
 }
+
+Console.WriteLine(new string('-', 50));
+
+var reverse = doubleList.Reverse();
+foreach (var item in reverse)
+{
+    Console.WriteLine(item);
+}
