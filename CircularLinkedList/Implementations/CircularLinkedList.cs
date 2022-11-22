@@ -1,4 +1,5 @@
-﻿using CircularLinkedList.Interfaces;
+﻿using System.Collections;
+using CircularLinkedList.Interfaces;
 using Shared.Models;
 
 namespace CircularLinkedList.Implementations;
@@ -20,6 +21,8 @@ public class CircularLinkedList<T> : ICircularLinkedList<T>
     private void SetHeadItem(T data)
     {
         Head = new DoubleItem<T>(data);
+        Head.Next = Head;
+        Head.Prev = Head;
         Count = 1;
     }
 
@@ -41,6 +44,40 @@ public class CircularLinkedList<T> : ICircularLinkedList<T>
 
     public void Remove(T data)
     {
-        
+        if (Head.Data.Equals(data))
+        {
+            RemoveItem(Head);
+            Head = Head.Next;
+            return;
+        }
+
+        var current = Head.Next;
+        for (var i = Count; i > 0; i--)
+        {
+            if (current != null && current.Data.Equals(data))
+            {
+                RemoveItem(current);
+            }
+
+            current = current.Next;
+        }
     }
+
+    private void RemoveItem(DoubleItem<T> current)
+    {
+        current.Prev.Next = current.Next;
+        current.Next.Prev = current.Prev;
+        Count--;
+    }
+
+    public IEnumerator GetEnumerator()
+    {
+        var current = Head;
+        for (var i = 0; i < Count; i++)
+        {
+            yield return current;
+            current = current.Next;
+        }
+    }
+    
 }
