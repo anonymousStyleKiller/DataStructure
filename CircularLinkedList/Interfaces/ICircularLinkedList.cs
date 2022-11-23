@@ -1,6 +1,8 @@
-﻿namespace CircularLinkedList.Interfaces;
+﻿using System.Collections;
 
-public interface ICircularLinkedList<T>
+namespace CircularLinkedList.Interfaces;
+
+public interface ICircularLinkedList<T> : IEnumerable
 {
     public void Add(T data);
     public void Remove(T data);
