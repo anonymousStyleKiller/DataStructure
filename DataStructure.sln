@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CircularLinkedList", "Circu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Set", "Set\Set.csproj", "{0268BDA4-E6F2-481D-A244-10CC18C6A504}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseHashtable", "BaseHashtable\BaseHashtable.csproj", "{E5F359F1-08C6-4B12-BE36-B5C0F646BDB9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +44,9 @@ Global
 		{0268BDA4-E6F2-481D-A244-10CC18C6A504}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0268BDA4-E6F2-481D-A244-10CC18C6A504}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0268BDA4-E6F2-481D-A244-10CC18C6A504}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5F359F1-08C6-4B12-BE36-B5C0F646BDB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5F359F1-08C6-4B12-BE36-B5C0F646BDB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5F359F1-08C6-4B12-BE36-B5C0F646BDB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5F359F1-08C6-4B12-BE36-B5C0F646BDB9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
