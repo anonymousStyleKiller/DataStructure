@@ -35,7 +35,10 @@ public class Node<T> : IComparable, IComparable<T>
         var node = new Node<T>(data);
         if (node.Data.CompareTo(Data) == -1)
         {
-            if (Left == null) { Left = node; }
+            if (Left == null)
+            {
+                Left = node;
+            }
             else
             {
                 Left.Add(data);
@@ -52,5 +55,10 @@ public class Node<T> : IComparable, IComparable<T>
                 Right.Add(data);
             }
         }
+    }
+
+    public override string ToString()
+    {
+        return Data.ToString();
     }
 }
