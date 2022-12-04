@@ -23,49 +23,32 @@ public class Tree<T> where T : IComparable, IComparable<T>
 
     public List<T> Preorder()
     {
-        if (Root == null)
-        {
-            return new List<T>();
-        }
-
-        return Preorder(Root);
+        return Root == null ? new List<T>() : Preorder(Root);
     }
     
     public List<T> Postorder()
     {
-        if (Root == null)
-        {
-            return new List<T>();
-        }
-
-        return Postorder(Root);
+        return Root == null ? new List<T>() : Postorder(Root);
     }
 
     public List<T> Inorder()
     {
-        if (Root == null)
-        {
-            return new List<T>();
-        }
-
-        return Inorder(Root);
+        return Root == null ? new List<T>() : Inorder(Root);
     }
     
     private List<T> Preorder(Node<T> node)
     {
         var list = new List<T>();
-        if (node != null)
+        if (node == null) return list;
+        list.Add(node.Data);
+        if (node.Left != null)
         {
-            list.Add(node.Data);
-            if (node.Left != null)
-            {
-             list.AddRange(Preorder(node.Left));
-            }
+            list.AddRange(Preorder(node.Left));
+        }
 
-            if (node.Right != null)
-            {
-                list.AddRange(Preorder(node.Right));
-            }
+        if (node.Right != null)
+        {
+            list.AddRange(Preorder(node.Right));
         }
 
         return list;
@@ -74,20 +57,18 @@ public class Tree<T> where T : IComparable, IComparable<T>
     private List<T> Postorder(Node<T> node)
     {
         var list = new List<T>();
-        if (node != null)
+        if (node == null) return list;
+        if (node.Left != null)
         {
-            if (node.Left != null)
-            {
-                list.AddRange(Postorder(node.Left));
-            }
-
-            if (node.Right != null)
-            {
-                list.AddRange(Postorder(node.Right));
-            }
-            
-            list.Add(node.Data);
+            list.AddRange(Postorder(node.Left));
         }
+
+        if (node.Right != null)
+        {
+            list.AddRange(Postorder(node.Right));
+        }
+            
+        list.Add(node.Data);
 
         return list;
     }
@@ -96,19 +77,15 @@ public class Tree<T> where T : IComparable, IComparable<T>
     private List<T> Inorder(Node<T> node)
     {
         var list = new List<T>();
-        if (node != null)
+        if (node == null) return list;
+        if (node.Left != null)
         {
-            if (node.Left != null)
-            {
-                list.AddRange(Inorder(node.Left));
-            }
-            list.Add(node.Data);
-            if (node.Right != null)
-            {
-                list.AddRange(Inorder(node.Right));
-            }
-            
-         
+            list.AddRange(Inorder(node.Left));
+        }
+        list.Add(node.Data);
+        if (node.Right != null)
+        {
+            list.AddRange(Inorder(node.Right));
         }
 
         return list;
