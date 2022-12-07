@@ -12,7 +12,7 @@ public class Node<T> : IComparable, IComparable<T>
         Data = data;
     }
 
-    public Node(T data, Node<T> left, Node<T> right)
+    public  Node(T data, Node<T> left, Node<T> right)
     {
         Data = data;
         Left = left;
